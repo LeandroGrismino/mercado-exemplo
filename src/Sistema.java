@@ -10,5 +10,6 @@ public class Sistema {
 		
 		System.out.println(produto);
 		System.out.println(lote);
+
 	}
 }
