@@ -24,10 +24,12 @@ public class LoteRepository {
         catalogo.put(id, l);
     }
 
-    public ArrayList<String> listaLotes(){
-        ArrayList<String> lotes = new ArrayList<>();
-        for (String p : catalogo.keySet()){
-            lotes.add(p);
+
+
+    public ArrayList<Lote> listaLotes(){
+        ArrayList<Lote> lotes = new ArrayList<>();
+        for (Lote l : catalogo.values()){
+            lotes.add(l);
         }
         return lotes;
     }
