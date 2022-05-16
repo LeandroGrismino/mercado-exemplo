@@ -25,10 +25,21 @@ public class ProdutoRepository {
         catalogo.put(id, p);
     }
 
-    public ArrayList<String> listaProdutos(){
-        ArrayList<String> produtos = new ArrayList<>();
+    public ArrayList<Produto> getProdutoByName(String nome){
+        ArrayList<Produto> produtos = new ArrayList<>();
         for (String p : catalogo.keySet()){
-            produtos.add(p);
+            Produto produto = catalogo.get(p);
+            if (produto.getNome().contains(nome)){
+                produtos.add(catalogo.get(p));
+            }
+        }
+        return produtos;
+    }
+
+    public ArrayList<Produto> listaProdutos(){
+        ArrayList<Produto> produtos = new ArrayList<>();
+        for (String p : catalogo.keySet()){
+            produtos.add(catalogo.get(p));
         }
         return produtos;
     }
